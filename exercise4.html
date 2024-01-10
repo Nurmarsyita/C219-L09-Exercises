@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PieChart.js</title>
+  </head>
+
+  <body>
+    <div>
+      <canvas id="myChart"></canvas>
+    </div>
+
+    <!-- Add the CDN link for Chart.js here -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+      // Define chart labels
+      const data = {
+        labels: ["January", "February", "March", "April", "May", "June"],
+
+        // Set labels, colours and data
+        datasets: [
+          {
+            label: "My First Dataset",
+            data: [5, 10, 5, 2, 20, 30],
+            backgroundColor: [
+              "rgb(231, 76, 60)",
+              "rgb(155, 89, 182)",
+              "rgb(41, 128, 185)",
+              "rgb(211, 84, 0",
+              "rgb(39, 174, 96)",
+              "rgb(241, 196, 15)",
+            ],
+            hoverOffset: 4,
+          },
+        ],
+      };
+
+      // Configure charts
+      const config = {
+        type: "pie",
+        data: data,
+      };
+
+      // Render chart in <canvas>
+      const myChart = new Chart(document.getElementById("myChart"), config);
+    </script>
+  </body>
+</html>
